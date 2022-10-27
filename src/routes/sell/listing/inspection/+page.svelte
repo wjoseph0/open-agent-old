@@ -5,4 +5,4 @@
 <p>Upload inspection report</p>
 <input type="file" />
 
-<a href="./pricing"><button>Next step</button></a>
+<a href="../listing"><button>Return to Listing</button></a>

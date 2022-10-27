@@ -1,3 +1,5 @@
-<h1>Let's view current offers.</h1>
+<h1>Current offers</h1>
 
-<a href="./closing"><button>Accept offer</button></a>
+<a href="../listing/closing"><button>Accept offer</button></a>
+
+<a href="../listing"><button>Return to Listing</button></a>

@@ -1,3 +1,13 @@
-<h1>Time to list your house!</h1>
+<a href="./listing/inspection"><button>Inspection</button></a>
+<a href="./listing/pricing"><button>Pricing</button></a>
+<a href="./listing/staging"><button>Staging</button></a>
+<a href="./listing/photography"><button>Photography</button></a>
+<a href="./listing/offers"><button>Offers</button></a>
 
-<a href="./listing/offers"><button>View offers</button></a>
+<style>
+	button {
+		width: 150px;
+		height: 50px;
+		margin: 10px;
+	}
+</style>

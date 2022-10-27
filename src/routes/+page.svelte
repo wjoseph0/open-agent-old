@@ -1,4 +1,4 @@
-<a href="./sell/inspection"><button>Sell</button></a>
+<a href="./sell/new"><button>Sell</button></a>
 <button>Buy</button>
 
 <style>
