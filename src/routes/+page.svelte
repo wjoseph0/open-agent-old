@@ -1,1 +1,10 @@
-<h1>Home</h1>
+<a href="./sell/inspection"><button>Sell</button></a>
+<button>Buy</button>
+
+<style>
+	button {
+		width: 150px;
+		height: 50px;
+		margin: 10px;
+	}
+</style>
