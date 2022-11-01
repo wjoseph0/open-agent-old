@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/auth-helpers-sveltekit';
 
 const supabaseUrl = 'https://fklvfqyrcegoiidormwa.supabase.co';
 const supabaseKey =

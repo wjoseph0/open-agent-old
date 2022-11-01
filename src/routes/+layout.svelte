@@ -1,28 +1,19 @@
 <script>
 	import { supabase } from '../supabase.js';
-	import { user } from '../stores/authStore.js';
-	import Auth from '../components/Auth.svelte';
-	import { loadListings } from '../stores/listingStore.js';
+	import { onMount } from 'svelte';
+	import { invalidate } from '$app/navigation';
 
-	supabase.auth.onAuthStateChange(async (event, session) => {
-		console.log(event, session);
-		user.set(session?.user);
-		if (session?.user) {
-			loadListings();
-		}
+	onMount(() => {
+		const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange(() => {
+			invalidate('supabase:auth');
+		});
+
+		return () => {
+			subscription.unsubscribe();
+		};
 	});
-
-	const logout = () => {
-		console.log('logging out');
-		supabase.auth.signOut();
-	};
 </script>
 
-<main>
-	{#if $user}
-		<button type="submit" on:click={logout}>Log Out</button>
-		<slot />
-	{:else}
-		<Auth />
-	{/if}
-</main>
+<slot />
