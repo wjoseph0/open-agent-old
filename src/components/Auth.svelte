@@ -25,5 +25,5 @@
 
 <form on:submit|preventDefault={handleLogin}>
 	<input type="email" name="email" bind:value={email} placeholder="Your email" />
-	<button type="submit" disabled={loading}>Log In</button>
+	<button type="submit" disabled={loading}>Send magic link</button>
 </form>

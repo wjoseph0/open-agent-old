@@ -2,6 +2,8 @@
 	import { addListing } from '../stores/listingStore.js';
 	import { user } from '../stores/authStore.js';
 
+	export let showListingForm;
+
 	let address = '';
 	let city = '';
 	let state = '';
@@ -13,6 +15,7 @@
 		city = '';
 		state = '';
 		zip_code = '';
+		showListingForm = false;
 	};
 </script>
 
