@@ -1,11 +1,38 @@
+<script>
+	import { supabase } from '../supabase.js';
+	import { onMount } from 'svelte';
+	import { invalidate } from '$app/navigation';
+	import { page } from '$app/stores';
+	import Logout from '../components/Logout.svelte';
+	import { user } from '../stores/authStore.js';
+
+	onMount(() => {
+		const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange(() => {
+			invalidate('supabase:auth');
+		});
+
+		return () => {
+			subscription.unsubscribe();
+		};
+	});
+
+	const setUserStore = async () => {
+		await user.set($page.data.session.user);
+	};
+
+	if ($page.data.session) {
+		setUserStore();
+	}
+</script>
+
 <div class="grid-container">
 	<header>
 		<h1 style="margin: 0px;">Open Agent</h1>
-		<nav style="margin: 0px;">
-			<a href="/"><button>Home</button></a>
-			<a href="/about"><button>About</button></a>
-			<a href="/settings"><button>Settings</button></a>
-		</nav>
+		{#if $page.data.session}
+			<Logout />
+		{/if}
 	</header>
 
 	<main>
