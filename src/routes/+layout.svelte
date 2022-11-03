@@ -29,9 +29,15 @@
 
 <div class="grid-container">
 	<header>
-		<h1 style="margin: 0px;">Open Agent</h1>
+		<div />
+		<div>
+			<h1>Open Agent</h1>
+		</div>
 		{#if $page.data.session}
-			<Logout />
+			<div>
+				<p>{$page.data.session.user.email}</p>
+				<Logout />
+			</div>
 		{/if}
 	</header>
 
@@ -55,7 +61,26 @@
 		grid-template-rows: 10vh 80vh 10vh;
 	}
 
-	header,
+	header {
+		color: lightcyan;
+		background-color: darkslategray;
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: 33.3vw 33.3vw 33.3vw;
+	}
+
+	header div {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	header p {
+		font-size: small;
+		margin-right: 3px;
+	}
+
 	main,
 	footer {
 		color: lightcyan;

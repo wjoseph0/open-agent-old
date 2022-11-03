@@ -18,7 +18,6 @@
 </script>
 
 {#if $page.data.session}
-	<h1>Welcome {$page.data.session.user.email}</h1>
 	<button on:click={handleClick}>New Listing</button>
 	{#if showListingForm === true}
 		<ListingForm bind:showListingForm />
