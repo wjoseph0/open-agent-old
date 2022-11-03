@@ -20,8 +20,6 @@ export const addListing = async (address, city, state, zip_code, user_id) => {
 	if (error) {
 		return console.error(error);
 	}
-
-	listings.update((cur) => [...cur, data[0]]);
 };
 
 export const deleteListing = async (id) => {
