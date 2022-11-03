@@ -18,11 +18,16 @@
 		zip_code = '';
 		showListingForm = false;
 	};
+
+	const handleClick = () => {
+		showListingForm = false;
+	};
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
 	<div id="container">
 		<div id="listingForm">
+			<button id="cancel" on:click={handleClick}><p>X</p></button>
 			<h2>New Listing</h2>
 			<input type="text" name="address" bind:value={address} placeholder="Enter address" />
 			<input type="text" name="city" bind:value={city} placeholder="Enter city" />
@@ -57,5 +62,32 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+	}
+
+	button p {
+		font-size: x-large;
+	}
+
+	#cancel {
+		border-radius: 100%;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: lightcyan;
+		border: none;
+	}
+
+	#cancel:hover {
+		background-color: rgb(201, 228, 228);
+		scale: 1.2;
+	}
+
+	button {
+		background-color: lightcyan;
+		border: none;
+		border-radius: 10px;
+		padding: 5px;
 	}
 </style>
