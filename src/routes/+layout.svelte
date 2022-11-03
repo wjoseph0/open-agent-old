@@ -62,6 +62,7 @@
 	}
 
 	header {
+		font-family: Arial, Helvetica, sans-serif;
 		color: lightcyan;
 		background-color: darkslategray;
 		display: grid;
@@ -79,10 +80,12 @@
 	header p {
 		font-size: small;
 		margin-right: 3px;
+		font-style: italic;
 	}
 
 	main,
 	footer {
+		font-family: Arial, Helvetica, sans-serif;
 		color: lightcyan;
 		background-color: darkslategray;
 		display: flex;

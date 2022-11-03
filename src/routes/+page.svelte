@@ -18,7 +18,8 @@
 </script>
 
 {#if $page.data.session}
-	<button on:click={handleClick}>New Listing</button>
+	<h2>My Listings</h2>
+	<button on:click={handleClick}><p>+</p></button>
 	{#if showListingForm === true}
 		<ListingForm bind:showListingForm />
 	{/if}
@@ -29,3 +30,24 @@
 {:else}
 	<Auth />
 {/if}
+
+<style>
+	button p {
+		font-size: x-large;
+	}
+
+	button {
+		border-radius: 100%;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: lightcyan;
+		border: none;
+	}
+
+	button:hover {
+		scale: 1.2;
+	}
+</style>
