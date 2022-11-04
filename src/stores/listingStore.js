@@ -29,5 +29,7 @@ export const deleteListing = async (id) => {
 		return console.error(error);
 	}
 
-	listings.update((listings) => listings.filter((listing) => listing.id !== id));
+	listings.update((listings) =>
+		listings.filter((listing) => listing.id !== id)
+	);
 };

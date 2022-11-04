@@ -23,7 +23,13 @@
 <p>Sign in via magic link with your email below.</p>
 
 <form on:submit|preventDefault={handleLogin}>
-	<input type="email" name="email" bind:value={email} placeholder="Your email" required />
+	<input
+		type="email"
+		name="email"
+		bind:value={email}
+		placeholder="Your email"
+		required
+	/>
 	<button type="submit" disabled={loading}>Send magic link</button>
 </form>
 

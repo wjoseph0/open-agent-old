@@ -29,10 +29,34 @@
 		<div id="listingForm">
 			<button id="cancel" on:click={handleClick}><p>X</p></button>
 			<h2>New Listing</h2>
-			<input type="text" name="address" bind:value={address} placeholder="Enter address" />
-			<input type="text" name="city" bind:value={city} placeholder="Enter city" />
-			<input type="text" name="state" bind:value={state} placeholder="Enter state" />
-			<input type="text" name="zip_code" bind:value={zip_code} placeholder="Enter ZIP code" />
+			<input
+				type="text"
+				name="address"
+				bind:value={address}
+				placeholder="Enter address"
+				required
+			/>
+			<input
+				type="text"
+				name="city"
+				bind:value={city}
+				placeholder="Enter city"
+				required
+			/>
+			<input
+				type="text"
+				name="state"
+				bind:value={state}
+				placeholder="Enter state"
+				required
+			/>
+			<input
+				type="text"
+				name="zip_code"
+				bind:value={zip_code}
+				placeholder="Enter ZIP code"
+				required
+			/>
 			<button type="submit">Submit</button>
 		</div>
 	</div>
