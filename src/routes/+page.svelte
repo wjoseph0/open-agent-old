@@ -1,6 +1,6 @@
 <script>
-	import Listing from '../components/Listing.svelte';
-	import ListingForm from '../components/ListingForm.svelte';
+	import Listing from '../components/Property.svelte';
+	import ListingForm from '../components/PropertyForm.svelte';
 	import { listings } from '../stores/listingStore.js';
 	import Auth from '../components/Auth.svelte';
 	import { page } from '$app/stores';
@@ -18,7 +18,7 @@
 </script>
 
 {#if $page.data.session}
-	<h2>My Listings</h2>
+	<h2>My Properties</h2>
 	<button on:click={handleClick}><p>+</p></button>
 	{#if showListingForm === true}
 		<ListingForm bind:showListingForm />
