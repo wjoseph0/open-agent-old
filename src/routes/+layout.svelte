@@ -31,7 +31,7 @@
 	<header>
 		<div />
 		<div>
-			<h1>Open Agent</h1>
+			<a href="/"><h1>Open Agent</h1></a>
 		</div>
 		{#if $page.data.session}
 			<div>
@@ -59,6 +59,11 @@
 		display: grid;
 		grid-template-columns: 100vw;
 		grid-template-rows: 10vh 80vh 10vh;
+	}
+
+	a {
+		text-decoration: none;
+		color: lightcyan;
 	}
 
 	header {

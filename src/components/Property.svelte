@@ -4,11 +4,11 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div id="container" transition:fade>
+<div id="container" in:fade>
 	<div>{listing.address}</div>
 	<div>{listing.city}, {listing.state}, {listing.zip_code}</div>
 	<div id="options">
-		<button>View</button>
+		<a href="/clients/{listing.address}"><button>View</button></a>
 		<button on:click={deleteListing(listing.id)}>Delete</button>
 	</div>
 </div>

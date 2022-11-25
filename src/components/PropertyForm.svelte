@@ -27,8 +27,8 @@
 <form on:submit|preventDefault={handleSubmit}>
 	<div id="container">
 		<div id="listingForm">
-			<button id="cancel" on:click={handleClick}><p>X</p></button>
-			<h2>New Listing</h2>
+			<button id="cancel" on:click={handleClick}>X</button>
+			<h2>New Client</h2>
 			<input
 				type="text"
 				name="address"
@@ -88,10 +88,6 @@
 		flex-direction: column;
 	}
 
-	button p {
-		font-size: x-large;
-	}
-
 	#cancel {
 		border-radius: 100%;
 		width: 50px;
@@ -103,15 +99,19 @@
 		border: none;
 	}
 
-	#cancel:hover {
-		background-color: rgb(201, 228, 228);
-		scale: 1.2;
-	}
-
 	button {
 		background-color: lightcyan;
 		border: none;
 		border-radius: 10px;
 		padding: 5px;
+	}
+
+	button:hover,
+	#cancel:hover {
+		background-color: rgb(203, 231, 231);
+	}
+
+	button:active {
+		transform: scale(0.9);
 	}
 </style>
