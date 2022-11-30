@@ -49,6 +49,10 @@
 	}
 
 	button:hover {
-		background-color: rgb(204, 231, 231);
+		background-color: rgb(203, 231, 231);
+	}
+
+	button:active {
+		transform: scale(0.9);
 	}
 </style>

@@ -4,13 +4,17 @@
 </script>
 
 {#if $page.data.session}
-	<a href="/clients"><button>View Clients</button></a>
+	<p>I want to...</p>
+	<button>Buy</button>
+	<button>Sell</button>
+	<p>...a home.</p>
 {:else}
 	<Auth />
 {/if}
 
 <style>
 	button {
+		margin: 5px;
 		border-radius: 15px;
 		width: 100px;
 		height: 50px;
@@ -19,10 +23,6 @@
 		justify-content: center;
 		background-color: lightcyan;
 		border: none;
-	}
-
-	a {
-		text-decoration: none;
 	}
 
 	button:hover {

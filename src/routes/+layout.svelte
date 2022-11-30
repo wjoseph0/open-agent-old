@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import Logout from '../components/Logout.svelte';
+	import LogoutButton from '../components/LogoutButton.svelte';
 	import { user } from '../stores/authStore.js';
 
 	onMount(() => {
@@ -19,7 +19,7 @@
 	});
 
 	const setUserStore = async () => {
-		await user.set($page.data.session.user);
+		user.set($page.data.session.user);
 	};
 
 	if ($page.data.session) {
@@ -28,27 +28,32 @@
 </script>
 
 <div class="grid-container">
-	<header>
-		<div />
-		<div>
-			<a href="/"><h1>Open Agent</h1></a>
-		</div>
-		{#if $page.data.session}
+	{#if $page.data.session}
+		<header id="withUser">
+			<div>
+				<a href="/"><h1>Open Agent</h1></a>
+			</div>
 			<div>
 				<p>{$page.data.session.user.email}</p>
-				<Logout />
+				<LogoutButton />
 			</div>
-		{/if}
-	</header>
+		</header>
+	{:else}
+		<header id="noUser">
+			<div>
+				<h1>Open Agent</h1>
+			</div>
+		</header>
+	{/if}
 
 	<main>
 		<slot />
 	</main>
 
 	<footer>
-		<a href="https://github.com/wjoseph0/open-agent"
-			><img src="/GitHub-logo.png" alt="Link to GitHub repo" /></a
-		>
+		<a href="https://github.com/wjoseph0/open-agent">
+			<img src="/GitHub-logo.png" alt="Link to GitHub repo" />
+		</a>
 	</footer>
 </div>
 
@@ -72,7 +77,14 @@
 		background-color: darkslategray;
 		display: grid;
 		grid-template-rows: auto;
-		grid-template-columns: 33.3vw 33.3vw 33.3vw;
+	}
+
+	header#withUser {
+		grid-template-columns: 50vw 50vw;
+	}
+
+	header#noUser {
+		grid-template-columns: 100vw;
 	}
 
 	header div {
