@@ -1,35 +1,14 @@
 <script>
-	import Auth from '../components/Auth.svelte';
-	import { page } from '$app/stores';
+	import Button from '../components/Button.svelte';
 </script>
 
-{#if $page.data.session}
-	<p>I want to...</p>
-	<button>Buy</button>
-	<button>Sell</button>
-	<p>...a home.</p>
-{:else}
-	<Auth />
-{/if}
+<p>I want to...</p>
+<Button text="Buy" />
+<a href="/sell/address"><Button text="Sell" /></a>
+<p>...a home.</p>
 
 <style>
-	button {
-		margin: 5px;
-		border-radius: 15px;
-		width: 100px;
-		height: 50px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: lightcyan;
-		border: none;
-	}
-
-	button:hover {
-		background-color: rgb(203, 231, 231);
-	}
-
-	button:active {
-		transform: scale(0.9);
+	a {
+		text-decoration: none;
 	}
 </style>

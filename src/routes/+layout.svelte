@@ -3,8 +3,9 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import LogoutButton from '../components/LogoutButton.svelte';
+	import Logout from '../components/Logout.svelte';
 	import { user } from '../stores/authStore.js';
+	import Auth from '../components/Auth.svelte';
 
 	onMount(() => {
 		const {
@@ -35,7 +36,7 @@
 			</div>
 			<div>
 				<p>{$page.data.session.user.email}</p>
-				<LogoutButton />
+				<Logout />
 			</div>
 		</header>
 	{:else}
@@ -47,7 +48,11 @@
 	{/if}
 
 	<main>
-		<slot />
+		{#if $page.data.session}
+			<slot />
+		{:else}
+			<Auth />
+		{/if}
 	</main>
 
 	<footer>
