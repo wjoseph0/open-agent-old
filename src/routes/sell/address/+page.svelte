@@ -6,7 +6,7 @@
 	};
 </script>
 
-<h1>What's the Address of your Home?</h1>
+<h2>What's the Address of your Home?</h2>
 
 <form on:submit|preventDefault={handleSubmit}>
 	<div>
@@ -50,17 +50,15 @@
 		row-gap: 20px;
 		width: 500px;
 	}
+
 	input {
 		width: 100%;
 		height: 30px;
 		border-radius: 10px;
 		border: none;
 	}
+
 	div {
 		width: 100%;
-	}
-
-	h1 {
-		font-size: x-large;
 	}
 </style>
