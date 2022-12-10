@@ -39,7 +39,7 @@
 		<input name="zip_code" type="text" required />
 	</div>
 
-	<Button text="Next" type="submit" width="500px" height="30px" />
+	<Button text="Next" type="submit" width="100%" height="30px" />
 </form>
 
 <style>
@@ -48,7 +48,8 @@
 		flex-direction: column;
 		align-items: flex-start;
 		row-gap: 20px;
-		width: 500px;
+		min-width: 70%;
+		max-width: 100%;
 	}
 
 	input {
