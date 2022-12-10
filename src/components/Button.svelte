@@ -3,10 +3,10 @@
 	export let width = '100px';
 	export let height = '50px';
 	export let type = 'button';
-	export let action = '';
+	export let clickEvent = '';
 </script>
 
-<button style="width:{width}; height:{height}" {type} on:click={action}>
+<button style="width:{width}; height:{height}" {type} on:click={clickEvent}>
 	{text}
 </button>
 

@@ -7,4 +7,4 @@
 	};
 </script>
 
-<Button text="Logout" width="60px" height="30px" action={logout} />
+<Button text="Logout" width="60px" height="30px" clickEvent={logout} />
