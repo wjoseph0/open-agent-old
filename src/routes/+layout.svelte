@@ -1,31 +1,7 @@
 <script>
-	import { supabase } from '../supabase.js';
-	import { onMount } from 'svelte';
-	import { invalidate } from '$app/navigation';
+	import { signIn, signOut } from '@auth/sveltekit/client';
 	import { page } from '$app/stores';
-	import Logout from '../components/Logout.svelte';
-	import { user } from '../stores/authStore.js';
-	import Auth from '../components/Auth.svelte';
-
-	onMount(() => {
-		const {
-			data: { subscription }
-		} = supabase.auth.onAuthStateChange(() => {
-			invalidate('supabase:auth');
-		});
-
-		return () => {
-			subscription.unsubscribe();
-		};
-	});
-
-	const setUserStore = async () => {
-		user.set($page.data.session.user);
-	};
-
-	if ($page.data.session) {
-		setUserStore();
-	}
+	import Button from '../components/Button.svelte';
 </script>
 
 <div class="grid-container">
@@ -35,8 +11,13 @@
 				<a href="/"><h1>Open Agent</h1></a>
 			</div>
 			<div>
-				<p>{$page.data.session.user.email}</p>
-				<Logout />
+				<p>{$page.data.session.user?.name ?? 'User'}</p>
+				<Button
+					text="Logout"
+					width="60px"
+					height="30px"
+					clickEvent={() => signOut()}
+				/>
 			</div>
 		</header>
 	{:else}
@@ -51,13 +32,13 @@
 		{#if $page.data.session}
 			<slot />
 		{:else}
-			<Auth />
+			<Button text="Sign In with GitHub" clickEvent={() => signIn('github')} />
 		{/if}
 	</main>
 
 	<footer>
 		<a href="https://github.com/wjoseph0/open-agent">
-			<img src="/GitHub-logo.png" alt="Link to GitHub repo" />
+			<img src="../../GitHub-logo.png" alt="Link to GitHub repo" />
 		</a>
 	</footer>
 </div>
