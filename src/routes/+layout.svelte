@@ -11,7 +11,7 @@
 				<a href="/"><h1>Open Agent</h1></a>
 			</div>
 			<div>
-				<p>{$page.data.session.user?.name ?? 'User'}</p>
+				<p>{$page.data.session.user?.name}</p>
 				<Button
 					text="Logout"
 					width="60px"
