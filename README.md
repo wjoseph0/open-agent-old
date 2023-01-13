@@ -1,3 +1,6 @@
+# Deprecated
+Go to [the new repo](https://github.com/wjoseph0/open-agent).
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
